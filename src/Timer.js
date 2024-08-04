@@ -40,7 +40,6 @@ const Timer = () => {
 
     if (time === userInputDuration) {
       if (isPomodoro) {
-        audio.play();
         setFlowStateVisible(true);
         setTimeout(() => {
           setFlowStateVisible(false);
@@ -148,7 +147,15 @@ const Timer = () => {
         </div>
       )}
       
-      <button className='button mt-4' onClick={toggleSettings}><IoIosSettings /></button>
+      <div className='buttons is-centered'>
+      <button className='button' onClick={toggleSettings}>
+        <span className='icon mr-1'>
+            <IoIosSettings />
+        </span>
+        Settings
+        </button>
+        
+      </div>
       
       {showSettings && (
         <div>
@@ -178,6 +185,7 @@ const Timer = () => {
       
       <p>Press Study Timer to begin studying</p>
       <p>Press settings to adjust study times - default: 25/5</p>
+      <a href='https://buymeacoffee.com/engineerdom' target='__blank'>Enjoying the app? Buy Me Coffee!</a>
     </div>
   );
 };
